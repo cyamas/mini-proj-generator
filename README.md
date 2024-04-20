@@ -2,11 +2,11 @@ This is a simple command-line interface program that generates a random list (of
 
 Enter the following into your terminal at the project root directory:
 
-To add a feature:\n
+To add a feature:
 ./bin/add -cat {specified category} -ft {new feature name}
 
-To remove a feature:\n
+To remove a feature:
 ./bin/remove -cat {specified category} -ft {specify feature}
 
-To generate a list of required features for your next miniproj:\n
+To generate a list of required features for your next miniproj:
 ./bin/gen -nf {enter number of features e.g. 3}
