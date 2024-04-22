@@ -17,7 +17,8 @@ func handleGen(numFeatures int) {
 
 	fmt.Println("\nBuild a small project that uses these features: ")
 	for i := 0; i < numFeatures; i++ {
-		selectRandoFeature(features)
+		cat, ft := selectRandoFeature(features)
+		fmt.Printf("%v: %v", cat, ft)
 	}
 }
 
@@ -29,16 +30,15 @@ func getCategoryNames(features *map[string][]string) []string {
 	return cats
 }
 
-func selectRandoFeature(features map[string][]string) {
+func selectRandoFeature(features map[string][]string) (string, string) {
 	cats := getCategoryNames(&features)
 	randoCatIndex := 0
 	if len(cats) > 1 {
-		randoCatIndex = rand.Intn(len(cats) - 1)
+		randoCatIndex = rand.Intn(len(cats))
 	}
 	entries := features[cats[randoCatIndex]]
 	randoEntryIndex := rand.Intn(len(entries))
 
-	fmt.Printf("%v: %v \n", cats[randoCatIndex], entries[randoEntryIndex])
 	delete(features, cats[randoCatIndex])
-
+	return cats[randoCatIndex], entries[randoEntryIndex]
 }
