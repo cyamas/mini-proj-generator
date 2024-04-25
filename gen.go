@@ -18,7 +18,7 @@ func handleGen(numFeatures int) {
 	fmt.Println("\nBuild a small project that uses these features: ")
 	for i := 0; i < numFeatures; i++ {
 		cat, ft := selectRandoFeature(features)
-		fmt.Printf("%v: %v", cat, ft)
+		fmt.Printf("\n%v: %v", cat, ft)
 	}
 }
 
